@@ -70,11 +70,11 @@ function displayPopup() {
   const catscount = calculateROI(capital);
   const popup = document.getElementById('popup');
   const cats = document.getElementById('cats');
-  cats.textContent = ` ${catscount}`;
+  cats.textContent = (catscount * 1).toLocaleString('en-US');
   const fpersecond = catscount;
-  document.getElementById('fps').textContent = ' ' + fpersecond.toLocaleString(); 
-  document.getElementById('fpm').textContent = ' ' + (fpersecond * 60).toLocaleString(); 
-  document.getElementById('fph').textContent = ' ' + ((fpersecond * 60)* 60).toLocaleString();
+  document.getElementById('fps').textContent = ' ' + (fpersecond * 1).toLocaleString('en-US'); 
+  document.getElementById('fpm').textContent = ' ' + (fpersecond * 60).toLocaleString('en-US'); 
+  document.getElementById('fph').textContent = ' ' + ((fpersecond * 60)* 60).toLocaleString('en-US');
   document.getElementById('cph').textContent = ' ' + (((fpersecond * 60)* 60) / 8640000).toFixed(2);
   document.getElementById('cpd').textContent = ' ' + ((((fpersecond * 60)* 60) / 8640000) * 24).toFixed(1);
 
@@ -97,3 +97,24 @@ calcButton.addEventListener('click', displayPopup);
 
 
 
+// HOW TO PLAY MODAL
+window.onload = function() {
+    const modal = document.getElementById('videoModal');
+    const closeButton = document.getElementById('close');
+  
+    // Check if modal has been shown before
+    const modalShown = localStorage.getItem('modalShown');
+  
+    if (!modalShown) {
+      // If modal has not been shown, display it
+      modal.style.display = 'block';
+  
+      // Close the modal when close button is clicked
+      closeButton.addEventListener('click', function() {
+        modal.style.display = 'none';
+        // Set flag in local storage to indicate that modal has been shown
+        localStorage.setItem('modalShown', 'true');
+      });
+    }
+  };
+  
