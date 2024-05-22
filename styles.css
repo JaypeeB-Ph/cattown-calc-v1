@@ -1,0 +1,133 @@
+body {
+  background-image: url("bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+/* CATTOWN */
+
+
+.calclabel{
+  display: none;
+}
+
+.months{
+  display: none;
+}
+
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+
+/* CATTOWN */
+
+input {
+  text-align: center;
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+.ethroi-btn {
+  display: block !important;
+  margin: 0 auto 1rem;
+}
+
+.th-btn {
+  display: block !important;
+  margin: 0 auto 1rem;
+}
+
+.ms-btn {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
+
+.kibbleroi-btn {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+}
+
+.play-btn {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
+
+.container-fluid{
+  text-align: center;
+}
+
+.calc {
+  position: relative;
+  background-color: #DDDDDD;
+  margin: 1% 25%;
+  border-radius: 10px;
+  padding: 2% 5%;
+}
+
+.logo {
+  width: 50%;
+  height: auto;
+}
+
+@media (max-width: 730px){
+  input{
+    font-size: 1rem;
+  }
+
+  .ms-btn {
+    position: static;
+    margin: 5px 0 ;
+  }
+
+  .kibbleroi-btn {
+    position: static;
+    margin: 5px 0 ;
+  }
+
+  .play-btn {
+    position: static;
+    margin: 5px 0 ;
+  }
+
+}
+
+@media (max-width: 1000px){
+
+  .logo {
+    width: 60%;
+    height: auto;
+  }
+
+}
+
+
+.supportme{
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  margin-top: 10px;
+}
+
+
+.popup-close {
+  float: right; /* Align close button to the right */
+}
+
+.boldtext{
+ font-weight: bold;
+}
