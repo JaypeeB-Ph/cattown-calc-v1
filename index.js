@@ -3,7 +3,7 @@
 let ethpricevar = 0;
 const catprice = 0.000088;
 
-const FETCH_INTERVAL = 10000; // 10 seconds
+const FETCH_INTERVAL = 300000; // 30 seconds
         const STORAGE_KEY = 'lastFetchTime';
 
         async function fetchCryptoPrices() {
