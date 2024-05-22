@@ -131,3 +131,44 @@ input {
 .boldtext{
  font-weight: bold;
 }
+
+
+
+
+/* HOW TO PLAY 101 MODAL */
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.modal-content {
+  position: absolute;
+  top: 110%; /* Adjusted to include the 5% margin from the top */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%; /* Set the width to 100% to display the video in full */
+  max-width: 800px; /* Adjust the max-width of the modal content */
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.close {
+  display: block;
+  margin-top: 20px; /* Add margin to space out the close button */
+  cursor: pointer;
+}
+
+.video {
+  width: 100%; /* Make the video fill the width of the modal content */
+  height: auto; /* Maintain aspect ratio */
+}
+
