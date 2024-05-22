@@ -40,6 +40,18 @@
       </div>
 
 
+      <!-- HOW TO PLAY MODAL -->
+      <div class="modal" id="videoModal">
+        <div class="modal-content">
+          <video controls autoplay class="video" width="800" height="2200">
+            <source src="101.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <button class="btn btn-danger" id="close">Close</button>
+        </div>
+      </div>
+
+      <!-- Calc Result Pop up -->
       <div class="popup" id="popup">
         <h2>Estimated ETH Yield ROI</h2>
         <p>Cats: <span id="cats" class="boldtext"></span> </p>
@@ -50,7 +62,7 @@
         <p >CPD: <span id="cpd" class="boldtext">1</span> cats per day</p>
         <p >ETH yield per day: <span id="epd" class="boldtext">1</span></p>
         <p >Estimated ROI in: <span id="roi" class="boldtext">1</span> month/s</p>
-        <p class="font-italic">Note: This is only an estimation. Your ROI could be more or less depending on the $ETH balance in the contract and the overall health of the economy. Don't forget that $KIBBLE yield and event rewards are not included in the calculation.</p>
+        <p><em>Note: This is only an initial estimation. Your ROI could vary depending on your in-game actions, whether you choose to combine or only sell floofs to realize your daily $ETH yield, and, of course, the overall health of the economy. Don't forget that $KIBBLE yield and event rewards are not included in this calculation.</em></p>
 
         <button class="btn btn-danger popup-close" onclick="closePopup()">Meow</button>
       </div>
