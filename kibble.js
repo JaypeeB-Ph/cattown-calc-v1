@@ -19,7 +19,7 @@ function calculate() {
   document.getElementById('reward').textContent = "No rewards! 😾 Fill all the fields please 🐱 ";
 }else{
   // Display result
-  document.getElementById('reward').textContent = result.toFixed(0);
+  document.getElementById('reward').textContent = result.toFixed(3);
 }
 
   
