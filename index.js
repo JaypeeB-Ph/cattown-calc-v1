@@ -26,7 +26,7 @@ const FETCH_INTERVAL = 30000; // 30 seconds
 
                 // Update Ethereum price
                 const ethPrice = data.ethereum.usd;
-                document.getElementById('ethprice').textContent = "ETH price: " + `$${ethPrice}`;
+                document.getElementById('ethprice').textContent = "ETH price: " + `$${ethPrice.toLocaleString('en-US')}`;
                 ethpricevar = ethPrice;
 
                 // Update Kibble price
@@ -67,22 +67,28 @@ function displayPopup() {
       return;
   }
 
-  const catscount = calculateROI(capital);
-  const popup = document.getElementById('popup');
-  const cats = document.getElementById('cats');
-  cats.textContent = (catscount * 1).toLocaleString('en-US');
-  const fpersecond = catscount;
-  document.getElementById('fps').textContent = ' ' + (fpersecond * 1).toLocaleString('en-US'); 
-  document.getElementById('fpm').textContent = ' ' + (fpersecond * 60).toLocaleString('en-US'); 
-  document.getElementById('fph').textContent = ' ' + ((fpersecond * 60)* 60).toLocaleString('en-US');
-  document.getElementById('cph').textContent = ' ' + (((fpersecond * 60)* 60) / 8640000).toFixed(2);
-  document.getElementById('cpd').textContent = ' ' + ((((fpersecond * 60)* 60) / 8640000) * 24).toFixed(1);
+  if (ethpricevar <= 0) {
+    alert('Please wait for the coin prices to load.');
+    return;
+  }else{
+    const catscount = calculateROI(capital);
+    const popup = document.getElementById('popup');
+    const cats = document.getElementById('cats');
+    cats.textContent = (catscount * 1).toLocaleString('en-US');
+    const fpersecond = catscount;
+    document.getElementById('fps').textContent = ' ' + (fpersecond * 1).toLocaleString('en-US'); 
+    document.getElementById('fpm').textContent = ' ' + (fpersecond * 60).toLocaleString('en-US'); 
+    document.getElementById('fph').textContent = ' ' + ((fpersecond * 60)* 60).toLocaleString('en-US');
+    document.getElementById('cph').textContent = ' ' + (((fpersecond * 60)* 60) / 8640000).toFixed(2);
+    document.getElementById('cpd').textContent = ' ' + ((((fpersecond * 60)* 60) / 8640000) * 24).toFixed(1);
 
-  const ethyield = ((((fpersecond * 60)* 60) / 8640000) * 24).toFixed(1);
-  document.getElementById('epd').textContent = ' ' + (ethyield * catprice).toFixed(8);
-  document.getElementById('roi').textContent = ' ' + (((capital/ethpricevar) / (ethyield * catprice).toFixed(8) / 30)).toFixed(1);
+    const ethyield = ((((fpersecond * 60)* 60) / 8640000) * 24).toFixed(1);
+    document.getElementById('epd').textContent = ' ' + (ethyield * catprice).toFixed(8);
+    document.getElementById('roi').textContent = ' ~' + (((capital/ethpricevar) / (ethyield * catprice).toFixed(8) / 30)).toFixed(1);
 
-  popup.style.display = 'block'; // Show the popup
+    popup.style.display = 'block'; // Show the popup
+  }
+
 }
 
 // Function to close the popup

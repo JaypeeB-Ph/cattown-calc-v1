@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Cat Town Calculator by cryptoji</title>
+  <link rel="shortcut icon" href="caticon.ico">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  <!-- CUSTOM CSS -->
+  <link rel="stylesheet" href="styles-kibble.css">
+</head>
+
+<body>
+
+  <div class="container-fluid">
+    <img class="logo" src="logo.png" alt="logo">
+  </div>
+
+  <div class="container-fluid">
+    <div class="calc">
+      <h1>💰KIBBLE YIELD CALCULATOR💰</h1>
+      <br>
+    
+      <form>
+        <div class="mb-3">
+          <label class="form-label">Wallet $KIBBLE holdings:</label>
+          <input type="number" class="form-control" id="kibbleowned">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">How many cats you own:</label>
+          <input type="number" class="form-control" id="catsowned">
+        </div>
+        <br>
+        <p class="text-center fw-bold">Update these values based on the treasury balance in the <a href="https://cat.town/?ref=3c743b34354e343969343c6f4f38683a3f694e344e3a693a3c4d3e3f38343c3e3e693b4a4e353a394f3d" target="_blank">game</a>.</p>
+        <div class="mb-3">
+          <label class="form-label">Treasury Circulating Cats:</label>
+          <input type="number" class="form-control" id="tcats">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Treasury $KIBBLE Balance:</label>
+          <input type="number" class="form-control" id="tkibble">
+        </div>
+        
+      </form>
+
+
+      <button type="button" class="btn btn-success cal-btn" onclick="calculate()">Calculate</button>
+
+
+      <h2 id="resultText" style="display: none;">Estimated 3-day $KIBBLE Yield ~<span id="result"></span></h2>
+
+      <div class="popup" id="popup">
+        <h4>😻 3-Day $KIBBLE Rewards 😻</h4>
+        <br>
+        <h2 class="fw-centered"><span id="reward" class="boldtext"></span></h2>
+        <button class="btn btn-danger popup-close" onclick="closePopup()">Meow</button>
+      </div>
+
+      <a href="index.html" class="return-homepage"><button type="button" class="btn btn-dark back-btn">ETH Yield ROI Calculator</button></a>
+      <a href="https://cat.town/?ref=3c743b34354e343969343c6f4f38683a3f694e344e3a693a3c4d3e3f38343c3e3e693b4a4e353a394f3d" target="_blank"><button type="button" class="btn btn-dark play-btn">Play Now</button></a>
+    </div>
+
+
+    <p class="supportme">Support me by clicking "Play Now" to use my ref link or donate some ETH or KIBBLE 😻 to my BASE Wallet 0x789B85e80cC4d63eB8B6e60A2348022e7FB965C1</a> thank you!</p>
+
+  </div>
+
+  
+  <script type="text/javascript" src="kibble.js"></script>
+</body>
+
+</html>
