@@ -6,7 +6,7 @@ function calculate() {
   const F47 = 10000; // Fixed value from Excel
   const F45 = 1000; // Fixed value from Excel
 
-  // Perform the calculation
+  // Perform calculation
   let result;
   if (E7 < 100) {
     result = 0;
@@ -18,17 +18,17 @@ function calculate() {
   if (isNaN(E7) || isNaN(E22) || isNaN(E6) || isNaN(E21) || E7 === '' || E22 === '' || E6 === '' || E21 === '') {
   document.getElementById('reward').textContent = "No rewards! 😾 Fill all the fields please 🐱 ";
 }else{
-  // Display the result
+  // Display result
   document.getElementById('reward').textContent = result.toFixed(0);
 }
 
   
   
-  popup.style.display = 'block'; // Show the popup
+  popup.style.display = 'block'; // Show popup
 }
 
-// Function to close the popup
+// Function to close popup
 function closePopup() {
   const popup = document.getElementById('popup');
-  popup.style.display = 'none'; // Hide the popup
+  popup.style.display = 'none'; // Hide popup
 }

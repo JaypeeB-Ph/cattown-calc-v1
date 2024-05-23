@@ -125,7 +125,7 @@ input {
 
 
 .popup-close {
-  float: right; /* Align close button to the right */
+  float: right; 
 }
 
 .boldtext{
@@ -150,11 +150,11 @@ input {
 
 .modal-content {
   position: absolute;
-  top: 110%; /* Adjusted to include the 5% margin from the top */
+  top: 110%; 
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 100%; /* Set the width to 100% to display the video in full */
-  max-width: 800px; /* Adjust the max-width of the modal content */
+  width: 100%; 
+  max-width: 800px; 
   background-color: #fff;
   padding: 20px;
   border-radius: 5px;
@@ -163,12 +163,12 @@ input {
 
 .close {
   display: block;
-  margin-top: 20px; /* Add margin to space out the close button */
+  margin-top: 20px; 
   cursor: pointer;
 }
 
 .video {
-  width: 100%; /* Make the video fill the width of the modal content */
-  height: auto; /* Maintain aspect ratio */
+  width: 100%; 
+  height: auto; 
 }
 

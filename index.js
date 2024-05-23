@@ -43,7 +43,7 @@ const FETCH_INTERVAL = 30000; // 30 seconds
         // Fetch prices immediately on page load
         fetchCryptoPrices();
 
-        // Then start the interval to fetch prices periodically
+        // start the interval to fetch prices periodically
         setInterval(fetchCryptoPrices, FETCH_INTERVAL);
 
 
@@ -55,7 +55,7 @@ function calculateROI(capital) {
   const eth = ethpricevar;
   const roi = (capital / eth) / catprice;
 
-  return roi.toFixed(0); // Return ROI rounded to 8 decimal places
+  return roi.toFixed(0); 
 }
 
 // Function to display the popup with ROI results
@@ -86,7 +86,7 @@ function displayPopup() {
     document.getElementById('epd').textContent = ' ' + (ethyield * catprice).toFixed(8);
     document.getElementById('roi').textContent = ' ~' + (((capital/ethpricevar) / (ethyield * catprice).toFixed(8) / 30)).toFixed(1);
 
-    popup.style.display = 'block'; // Show the popup
+    popup.style.display = 'block'; // Show popup
   }
 
 }
@@ -94,10 +94,10 @@ function displayPopup() {
 // Function to close the popup
 function closePopup() {
   const popup = document.getElementById('popup');
-  popup.style.display = 'none'; // Hide the popup
+  popup.style.display = 'none'; // Hide popup
 }
 
-// Add event listener to the calc button
+
 const calcButton = document.querySelector('.ethroi-btn');
 calcButton.addEventListener('click', displayPopup);
 
@@ -115,7 +115,7 @@ window.onload = function() {
       // If modal has not been shown, display it
       modal.style.display = 'block';
   
-      // Close the modal when close button is clicked
+      // Close modal when close button is clicked
       closeButton.addEventListener('click', function() {
         modal.style.display = 'none';
         // Set flag in local storage to indicate that modal has been shown
