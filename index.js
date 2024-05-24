@@ -1,7 +1,7 @@
 // ETH AND KIBBLE price display
 
 let ethpricevar = 0;
-const catprice = 0.000088;
+const catprice = 0.000086;
 
 const FETCH_INTERVAL = 30000; // 30 seconds
         const STORAGE_KEY = 'lastFetchTime';
@@ -85,7 +85,8 @@ function displayPopup() {
     const ethyield = ((((fpersecond * 60)* 60) / 8640000) * 24).toFixed(1);
     document.getElementById('epd').textContent = ' ' + (ethyield * catprice).toFixed(8);
     document.getElementById('roi').textContent = ' ~' + (((capital/ethpricevar) / (ethyield * catprice).toFixed(8) / 30)).toFixed(1);
-
+    const oneYearGrowth = ((ethyield * catprice) * 365) * ethpricevar;
+    document.getElementById('apy').textContent = ' ' + calculateAPY(capital,oneYearGrowth).toFixed(2);
     popup.style.display = 'block'; // Show popup
   }
 
@@ -123,4 +124,17 @@ window.onload = function() {
       });
     }
   };
+
+
+  // CALCULATE APY
+
+  function calculateAPY(capital, finalResult) {
+    // Calculate APY
+    const APY = Math.pow(finalResult / capital, 1) - 1;
+
+    // Convert APY to percentage
+    const APYPercentage = APY * 100;
+
+    return APYPercentage;
+}
   

@@ -11,6 +11,9 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
   <!-- CUSTOM CSS -->
   <link rel="stylesheet" href="styles-kibble.css">
+
+   <!-- Font Awesome CDN -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 
 <body>
@@ -37,17 +40,17 @@
         <p class="text-center fw-bold">Update these values based on the treasury balance in the <a href="https://cat.town/?ref=3c743b34354e343969343c6f4f38683a3f694e344e3a693a3c4d3e3f38343c3e3e693b4a4e353a394f3d" target="_blank">game</a>.</p>
         <div class="mb-3">
           <label class="form-label">Treasury Circulating Cats:</label>
-          <input type="number" class="form-control" id="tcats" value="551500">
+          <input type="number" class="form-control" id="tcats" value="552400">
         </div>
         <div class="mb-3">
           <label class="form-label">Treasury $KIBBLE Balance:</label>
-          <input type="number" class="form-control" id="tkibble" value="1311479">
+          <input type="number" class="form-control" id="tkibble" value="1306858">
         </div>
         
       </form>
 
 
-      <button type="button" class="btn btn-success cal-btn" onclick="calculate()">Calculate</button>
+      <button type="button" class="btn btn-success cal-btn" onclick="calculate(), triggerConfetti()">Calculate</button>
 
 
       <h2 id="resultText" style="display: none;">Estimated 3-day $KIBBLE Yield ~<span id="result"></span></h2>
@@ -67,7 +70,20 @@
 
     <p class="supportme">Support me by clicking "Play Now" to use my ref link or donate some ETH or KIBBLE 😻 to my BASE Wallet 0x789B85e80cC4d63eB8B6e60A2348022e7FB965C1</a> thank you!</p>
 
+    <!-- Font Awesome icons with links -->
+    <div class="social-icons">
+      <a href="https://t.me/WelcomeToCatTown"><i class="fab fa-telegram"></i></a>
+      <a href="https://x.com/CatTownBase"><i class="fab fa-twitter"></i></a>
+      <a href="https://discord.gg/FEsYujqh"><i class="fab fa-discord"></i></a>
+      <a href="https://docs.cat.town/"><i class="fas fa-book"></i></a>
+      <p class="text-white"><strong>Cat Town Socials</strong></p>
+    </div>
+
   </div>
+
+  
+  <!-- Include the canvas-confetti library -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 
   
   <script type="text/javascript" src="kibble.js"></script>

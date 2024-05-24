@@ -53,6 +53,7 @@ function calculate() {
   document.getElementById('reward').textContent = result.toFixed(3);
   kibblereward = result.toFixed(3);
   displayPrice();
+  
 }
 
   
@@ -67,3 +68,11 @@ function closePopup() {
 }
 
 
+function triggerConfetti() {
+  // Trigger confetti effect
+  confetti({
+    particleCount: 300, // Number of confetti particles
+    spread: 200, // Spread of the confetti particles
+    origin: { y: 0.6 } // Origin point (0.6 = bottom of the screen)
+  });
+}

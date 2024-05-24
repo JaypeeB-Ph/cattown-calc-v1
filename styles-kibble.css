@@ -128,3 +128,14 @@ label{
 .boldtext{
  font-weight: bold;
 }
+
+
+.social-icons {
+  align-items: center;
+}
+.social-icons a {
+  font-size: 2em; /* adjust the size of icons */
+  margin: 10px 10px; /* adjust the space between icons */
+  color: white;
+}
+
