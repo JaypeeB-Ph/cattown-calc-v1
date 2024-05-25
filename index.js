@@ -1,7 +1,7 @@
 // ETH AND KIBBLE price display
 
 let ethpricevar = 0;
-const catprice = 0.000086;
+const catprice = 0.00008438;
 
 const FETCH_INTERVAL = 30000; // 30 seconds
         const STORAGE_KEY = 'lastFetchTime';
@@ -83,7 +83,7 @@ function displayPopup() {
     document.getElementById('cpd').textContent = ' ' + ((((fpersecond * 60)* 60) / 8640000) * 24).toFixed(1);
 
     const ethyield = ((((fpersecond * 60)* 60) / 8640000) * 24).toFixed(1);
-    document.getElementById('epd').textContent = ' ' + (ethyield * catprice).toFixed(8);
+    document.getElementById('epd').textContent = ' ' + (ethyield * catprice).toFixed(8) + ' (~' + ((ethyield * catprice) * ethpricevar).toFixed(2)+' USD)';
     document.getElementById('roi').textContent = ' ~' + (((capital/ethpricevar) / (ethyield * catprice).toFixed(8) / 30)).toFixed(1);
     const oneYearGrowth = ((ethyield * catprice) * 365) * ethpricevar;
     document.getElementById('apy').textContent = ' ' + calculateAPY(capital,oneYearGrowth).toFixed(2);
