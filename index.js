@@ -1,7 +1,7 @@
 // ETH AND KIBBLE price display
 
 let ethpricevar = 0;
-const catprice = 0.00008438;
+const catprice = 0.00008289;
 
 const FETCH_INTERVAL = 30000; // 30 seconds
         const STORAGE_KEY = 'lastFetchTime';
