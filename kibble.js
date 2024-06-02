@@ -40,24 +40,26 @@ function calculate() {
   let result;
   if (E7 < 100) {
     result = 0;
-} else {
-    result = ((E22 * (F47 / 2 + ((F47 * E6 * 1000000000000000000) / (100000000 * 1000000000000000000) * 3 + 7 * (F47 * E7) / E21) * F45 / 10)) / Math.pow(10000, 2));
-}
+  } else {
+    let part1 = F47 * E6 * 1e18;
+    let part2 = 1e8 * 1e18;
+    let part3 = (part1 / part2) * 3;
+    let part4 = 7 * (F47 * E7) / E21;
+    let intermediate = part3 + part4;
+    let finalCalculation = E22 * (intermediate * F45 / 10);
+    result = finalCalculation / Math.pow(10000, 2);
+  }
 
-// Check if any input is empty or NaN
+  // Check if any input is empty or NaN
   if (isNaN(E7) || isNaN(E22) || isNaN(E6) || isNaN(E21) || E7 === '' || E22 === '' || E6 === '' || E21 === '') {
-  document.getElementById('reward').textContent = "No rewards! 😾 Fill all the fields please 🐱 ";
-}else{
+    document.getElementById('reward').textContent = "No rewards! 😾 Fill all the fields please 🐱 ";
+  } else {
+    // Display result
+    document.getElementById('reward').textContent = result.toFixed(3);
+    kibblereward = result.toFixed(3);
+    displayPrice();
+  }
 
-  // Display result
-  document.getElementById('reward').textContent = result.toFixed(3);
-  kibblereward = result.toFixed(3);
-  displayPrice();
-  
-}
-
-  
-  
   popup.style.display = 'block'; // Show popup
 }
 
